@@ -1,0 +1,1 @@
+mvn -DrunnerFile="%1" test
