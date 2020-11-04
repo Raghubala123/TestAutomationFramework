@@ -32,6 +32,7 @@ public class Report {
 	private static ExtentReports extentReport=null;
 	
 	static Logger log=Log.getLogInstance();
+	PropertiesReader properties=PropertiesReader.getInstance();
 	
 	private static WebDriver driver=WebDriverFactory.getWebDriverFactoryInstance().getWebDriverInstance();
 
@@ -60,11 +61,40 @@ public class Report {
 	public void updateTestLog(LogStatus logStatus,String stepName)
 	{
 		try {
-			test.log(logStatus,stepName,test.addScreenCapture(capture(driver,scenarioName,scenarioLine)));
+			switch (logStatus) {
+
+			case PASS:
+				if(properties.getValue("PassedSteps").equalsIgnoreCase("YES"))
+				{
+					test.log(logStatus,stepName,test.addScreenCapture(capture(driver,scenarioName,scenarioLine)));
+				}
+				else
+				{
+					test.log(logStatus,stepName);
+				}
+				break;
+
+			case FAIL:
+				if(properties.getValue("FailedSteps").equalsIgnoreCase("YES"))
+				{
+					test.log(logStatus,stepName,test.addScreenCapture(capture(driver,scenarioName,scenarioLine)));
+				}
+				else
+				{
+					test.log(logStatus,stepName);
+				}
+				break;
+
+			default:
+				test.log(logStatus,stepName,test.addScreenCapture(capture(driver,scenarioName,scenarioLine)));
+				break;
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.info(e.getMessage());
 		}
+
 
 	}
 
