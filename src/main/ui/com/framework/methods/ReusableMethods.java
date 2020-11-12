@@ -16,6 +16,8 @@ import com.framework.core.WebDriverFactory;
 import com.framework.pageobjects.SearchEnginePage;
 import com.relevantcodes.extentreports.LogStatus;
 
+
+
 public class ReusableMethods {
 	
 	Keywords keywords= new Keywords();
