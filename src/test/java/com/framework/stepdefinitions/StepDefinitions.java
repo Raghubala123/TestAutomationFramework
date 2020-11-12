@@ -73,8 +73,9 @@ public class StepDefinitions {
 		//database=Database.getDBInstance();
 		
 		layout = new SimpleLayout();    
-	    appender = new FileAppender(layout,reportPath+"\\"+scenarioName+"\\"+scenarioName+"_"+scenarioLine+"\\debug.log",false);    
-	    log.addAppender(appender);
+		   // appender = new FileAppender(layout,reportPath+"\\"+scenarioName+"\\"+scenarioName+"_"+scenarioLine+"\\debug.log",false);
+			appender = new FileAppender(layout,reportPath+"\\"+featureFileName+"\\debug.log",true);
+		    log.addAppender(appender);
 	    
 	    //driver.manage().timeouts().implicitlyWait(Long.valueOf(properties.getValue("ImplicitWaitTimeout")), TimeUnit.SECONDS);
 	    

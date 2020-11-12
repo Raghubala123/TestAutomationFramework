@@ -18,7 +18,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features ="src\\test\\resources\\Feature" ,glue={"com.framework.stepdefinitions"},tags="@Bing")
+@CucumberOptions(features ="src\\test\\resources\\Feature",
+glue={"com.framework.stepdefinitions"},
+tags="@Bing2 or @Google4"
+)
 public class SampleRunner {
 	
 	public static WebDriver driver=WebDriverFactory.getWebDriverFactoryInstance().getWebDriverInstance();

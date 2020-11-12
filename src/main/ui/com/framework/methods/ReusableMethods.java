@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.Status;
 import com.framework.core.Keywords;
 import com.framework.core.Log;
 import com.framework.core.Report;
@@ -73,12 +74,12 @@ public class ReusableMethods {
 			if(driver.getTitle().contains(value))
 			{
 				log.info("Results Displayed on the screen");
-				report.updateTestLog(LogStatus.PASS,"Results Displayed on the screen");
+				report.updateTestLog(Status.PASS,"Results Displayed on the screen");
 			}
 			else
 			{
 				log.info("No Results Displayed");
-				report.updateTestLog(LogStatus.FAIL,"No Results Displayed");
+				report.updateTestLog(Status.FAIL,"No Results Displayed");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

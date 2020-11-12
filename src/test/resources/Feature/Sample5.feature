@@ -1,6 +1,6 @@
 Feature: Sample Cucumber Scripts
-@Google1
-Scenario Outline: Search using Google1
+@Google5
+Scenario Outline: Search using Google5
 
 Given the user navigates to the web site
 When the user enters the text in the search field
@@ -12,8 +12,8 @@ Examples:
 |12        |
 |13        |
 
-@Bing1
-Scenario Outline: Search using Bing1
+@Bing5
+Scenario Outline: Search using Bing5
 
 Given the user navigates to the web site
 When the user enters the text in the search field
