@@ -20,8 +20,6 @@ import com.framework.core.TestData;
 import com.framework.core.TestCaseDetails;
 import com.framework.core.WebDriverFactory;
 import com.framework.methods.ReusableMethods;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

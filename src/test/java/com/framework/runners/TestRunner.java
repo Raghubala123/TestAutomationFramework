@@ -25,7 +25,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features ="src\\test\\resources\\Feature",
 glue={"com.framework.stepdefinitions"},
-tags=""
+tags="@Bing2 or @Google4"
 )
 //@Bing2 or @Google4
 public class TestRunner {

@@ -14,7 +14,6 @@ import com.framework.core.TestCaseDetails;
 import com.framework.core.TestData;
 import com.framework.core.WebDriverFactory;
 import com.framework.pageobjects.SearchEnginePage;
-import com.relevantcodes.extentreports.LogStatus;
 
 
 

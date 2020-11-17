@@ -22,7 +22,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features ="src\\test\\resources\\Feature",
 glue={"com.framework.stepdefinitions"},
-tags="@Bing2 or @Google4"
+tags="@Bing3 or @Google2"
 )
 public class SampleRunner {
 	

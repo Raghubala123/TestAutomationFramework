@@ -14,9 +14,13 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
+import org.junit.Assert.*;
 
 import com.aventstack.extentreports.Status;
-import com.relevantcodes.extentreports.LogStatus;
+
+import junit.framework.Assert;
+
 import com.framework.core.WebDriverFactory;
 
 
@@ -44,7 +48,9 @@ public class Keywords {
 
 	Select select=null;
 
-	Actions actions=null;
+	Actions actions=new Actions(driver);
+	
+	SoftAssert softAssert= new SoftAssert();
 
 	/**
 	 * Launches the application in the browser.
@@ -384,6 +390,21 @@ public class Keywords {
 			select.selectByVisibleText(value);
 			log.info("Selected the option '"+value+"' from the dropdown '"+name+"' successfully");
 			report.updateTestLog(Status.PASS, "Selected the option '"+value+"' from the dropdown '"+name+"' successfully");
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			log.info(e.getMessage());
+			report.updateTestLog(Status.FAIL,e.getMessage());
+		}
+	}
+	
+	
+	public void assertEquals(String value1, String value2)
+	{
+		try{
+			softAssert.assertEquals(value1, value2);
+			log.info("The values '"+value1+"' and '"+value2+"' are equal");
+			report.updateTestLog(Status.PASS, "The values '"+value1+"' and '"+value2+"' are equal");
 			
 		}catch (Exception e) {
 			e.printStackTrace();
